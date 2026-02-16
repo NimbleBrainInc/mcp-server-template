@@ -1,0 +1,29 @@
+{
+  "manifest_version": "0.4",
+  "name": "@nimblebraininc/example",
+  "version": "0.1.0",
+  "description": "MCP server for the Example API",
+  "author": {
+    "name": "NimbleBrain Inc"
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Example API Key",
+      "description": "Your API key from https://example.com/settings/api",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "mcp_example.server",
+    "mcp_config": {
+      "command": "python",
+      "args": ["-m", "mcp_example.server"],
+      "env": {
+        "EXAMPLE_API_KEY": "${user_config.api_key}"
+      }
+    }
+  }
+}

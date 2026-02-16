@@ -1,0 +1,7 @@
+{
+  "name": "@nimblebraininc/example",
+  "version": "0.1.0",
+  "description": "MCP server for the Example API",
+  "publisher": "nimblebraininc",
+  "repository": "https://github.com/NimbleBrainInc/mcp-example"
+}
