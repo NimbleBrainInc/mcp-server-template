@@ -70,6 +70,5 @@ jobs:
 
       - name: Test bundle creation
         run: |
-          pip install mcpb
-          mcpb pack
+          npx @anthropic-ai/mcpb pack
           ls -la *.mcpb

@@ -32,6 +32,9 @@ uv.lock
 .vscode/
 .idea/
 
+# Vendored dependencies
+deps/
+
 # Docs (not needed in bundle)
 CLAUDE.md
 CONTRIBUTING.md
