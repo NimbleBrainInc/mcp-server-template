@@ -41,6 +41,11 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Type checking
+.mypy_cache/
+.dmypy.json
+.pytype/
+
 # Environments
 .env
 .venv
@@ -55,8 +60,9 @@ ENV/
 .vscode/
 *.code-workspace
 
-# macOS
+# OS
 .DS_Store
+Thumbs.db
 
 # Claude
 .claude/
@@ -89,5 +95,10 @@ temp/
 *.pem
 credentials.json
 
-# Built bundles
+# MCPB bundles
+bundle/
+deps/
 *.mcpb
+
+# Scanner reports
+security-report.json
