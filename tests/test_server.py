@@ -1,7 +1,8 @@
 """Tests for Example MCP Server tools."""
 
-import pytest
 from unittest.mock import AsyncMock, patch
+
+import pytest
 
 from mcp_example.api_client import ExampleAPIError
 

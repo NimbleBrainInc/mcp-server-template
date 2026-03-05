@@ -19,7 +19,7 @@ from fastmcp import Context, FastMCP
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-from mcp_example.api_client import ExampleClient, ExampleAPIError
+from mcp_example.api_client import ExampleAPIError, ExampleClient
 
 # Logging setup - all logs to stderr (stdout is reserved for JSON-RPC)
 logging.basicConfig(
