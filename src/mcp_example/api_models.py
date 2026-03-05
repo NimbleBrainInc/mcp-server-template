@@ -7,7 +7,6 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-
 # ============================================================================
 # Common Models
 # ============================================================================
@@ -18,7 +17,9 @@ class Pagination(BaseModel):
 
     model_config = {"populate_by_name": True}
 
-    next_cursor: str | None = Field(default=None, alias="nextCursor", description="Next page cursor")
+    next_cursor: str | None = Field(
+        default=None, alias="nextCursor", description="Next page cursor"
+    )
     has_more: bool = Field(default=False, alias="hasMore", description="Whether more pages exist")
 
 

@@ -2,7 +2,7 @@
 BUNDLE_NAME = mcp-example
 VERSION ?= 0.1.0
 
-.PHONY: help install dev-install format format-check lint lint-fix typecheck test test-cov clean run run-http check all bump
+.PHONY: help install dev-install format format-check lint lint-fix typecheck test test-cov clean run run-http check all bump bundle
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -68,6 +68,12 @@ endif
 	@sed -i '' 's/^version = .*/version = "$(VERSION)"/' pyproject.toml
 	@sed -i '' 's/__version__ = .*/__version__ = "$(VERSION)"/' src/mcp_example/__init__.py
 	@echo "Version bumped to $(VERSION) in all files."
+
+bundle: ## Build MCPB bundle locally
+	rm -rf deps/
+	uv pip install --target ./deps --only-binary :all: . 2>/dev/null || uv pip install --target ./deps .
+	npx @anthropic-ai/mcpb pack .
+	@echo "Bundle created. Run 'ls -la *.mcpb' to see it."
 
 # Development shortcuts
 fmt: format
